@@ -18,7 +18,7 @@ public class SymmetricStringAnalyzer {
 	        if (Character.isLetter(c))
 	           if (Character.isUpperCase(c))
 	        	   stack.push(c);
-	           else if (stack.isEmpty())
+	           else if (stack.isEmpty() )
 	                 return false ; 
 	               else {
 	                 char t = stack.top() ; 
