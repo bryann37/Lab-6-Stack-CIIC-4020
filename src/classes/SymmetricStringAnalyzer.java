@@ -32,7 +32,7 @@ public class SymmetricStringAnalyzer {
 	    }
 	
 
-		return true; 
+		return stack.isEmpty(); 
 	
 	}
 	
