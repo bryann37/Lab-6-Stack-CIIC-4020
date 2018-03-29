@@ -44,8 +44,37 @@ public class SymmetricStringAnalyzer {
 	throws StringIsNotSymmetricException 
 	{
 		
-		
-		return null;  // need to change if necessary....
+		SLLStack<Character> stack = new SLLStack<Character>(); 
+		String str = " ";
+	    for (int i=0; i < s.length(); i++) { 
+	        char c = s.charAt(i); 
+	        if (Character.isLetter(c))
+	           if (Character.isUpperCase(c)) {
+	        	   stack.push(c); 
+	        	   str += "<" + c + " ";
+	           }
+	        	  
+	        	
+	           else if (stack.isEmpty() )
+	                 return null ; 
+	           else {
+	                 char t = stack.top() ; 
+	                 if (t == Character.toUpperCase(c)) {
+	                	 stack.pop() ; 
+	                	 str +=  c + ">" + " ";
+	                 }
+	                   
+	                 
+	                 else 
+	                    return null; 
+	                }
+	    }
+	
+	    if(!stack.isEmpty())
+	    	return null;
+	    return str;
+	
 	}
+		
 
 }
